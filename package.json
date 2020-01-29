@@ -1,10 +1,10 @@
 {
-  "name": "boilerplate-react-webpack",
+  "name": "broken-link-finder",
   "version": "0.2.2",
   "description": "A webpack React starter",
   "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
   "main": "server/index.js",
-  "author": "EDA",
+  "author": "Bas Suckling",
   "license": "ISC",
   "scripts": {
     "client": "webpack-dev-server --hot --inline",
