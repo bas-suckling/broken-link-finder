@@ -1,10 +1,10 @@
 import React from 'react'
 import UrlInput from '../url-input/UrlInput'
+import Results from '../results/Results'
 
 class LandingPage extends React.Component {
     constructor(props) {
       super(props)
-      this.state = {}
     }
     render() {
       return (
@@ -12,6 +12,7 @@ class LandingPage extends React.Component {
           <div>
             <h1>Welcome to Broken Link Finder</h1>
             <UrlInput/>
+            <Results/>
           </div>
         </>
       )

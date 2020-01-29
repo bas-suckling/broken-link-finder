@@ -1,6 +1,6 @@
 const path = require('path')
 const express = require('express')
-const scraper = require('./routes/scraper')
+const scraper = require('./routes/baseUrlScraper')
 const server = express()
 
 server.use('/api/v1/scraper', scraper)
