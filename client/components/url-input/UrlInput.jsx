@@ -1,5 +1,7 @@
 import React from 'react'
 
+import findAllLinks from '../../api/index.js'
+
 class UrlInput extends React.Component {
     constructor(props) {
         super(props)
@@ -16,7 +18,8 @@ class UrlInput extends React.Component {
 
     submit = (e) => {
         e.preventDefault()
-        console.log('Check links button was pressed')
+        findAllLinks(this.state.url)
+        .then(res => console.log(res))
     }
 
     render() {
