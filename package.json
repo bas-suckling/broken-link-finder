@@ -8,7 +8,9 @@
   "license": "ISC",
   "scripts": {
     "client": "webpack-dev-server --hot --inline",
-    "dev": "node server & webpack --watch",
+    "dev": "run-p watch:client watch:server",
+    "watch:client": "webpack --watch",
+    "watch:server": "nodemon --watch server",
     "server": "node server",
     "start": "webpack && node server",
     "test": "jest --watchAll"
@@ -30,6 +32,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
     "superagent": "^5.0.2"
   },
   "devDependencies": {
