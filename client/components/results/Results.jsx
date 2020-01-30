@@ -1,4 +1,5 @@
 import React from 'react'
+import LinksList from '../links-table/LinksList'
 
 class Results extends React.Component {
     constructor(props) {
@@ -15,9 +16,7 @@ class Results extends React.Component {
                 (<div>
                     <h3>Links hosted at {this.props.baseUrl}</h3>
                     {(this.state.links.length = 0) ? 
-                        <ul>
-                            <li>Placeholder link</li>
-                        </ul>:
+                        <LinksList links = {this.state.links}/>:
                         <p>No links found</p>
                         }
                 </div>)
