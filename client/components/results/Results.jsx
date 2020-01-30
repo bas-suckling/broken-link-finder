@@ -17,7 +17,7 @@ class Results extends React.Component {
             <>
                 {(this.props.baseUrl ?
                     (<div>
-                        <h3>Links hosted at {this.props.baseUrl}</h3>
+                        <h3>Links found at {this.props.baseUrl}</h3>
                         {(this.state.links) ?
                             <LinksList links={this.state.links} /> :
                             <p>No links found</p>
