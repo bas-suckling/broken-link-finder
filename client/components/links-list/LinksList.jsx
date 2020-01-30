@@ -9,8 +9,8 @@ class LinksList extends React.Component {
     render() {
         return (
             <>
-                <div className="table">
-                    <table>
+                <div >
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Url</th>
@@ -18,7 +18,6 @@ class LinksList extends React.Component {
                             </tr>
                         </thead>
                         <tbody>
-                        {console.log('this is links', this.props.links)}
                             {    
                             this.props.links.map(function (element, i) {
                                 return  <tr key={i}>

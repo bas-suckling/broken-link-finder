@@ -1,5 +1,9 @@
 body {
-  background-color: red; }
+  background-color: lightgray;
+  padding: 1%; }
+
+table, th, td {
+  border: 1px solid black; }
 
 table {
-  padding: 1%; }
+  min-width: 30%; }
