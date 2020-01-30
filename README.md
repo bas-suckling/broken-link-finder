@@ -4,8 +4,8 @@ This web app allows a user to type in a url, and gets displayed a list of all th
 
 ## Current Tasks
 
-- get(url) currently does not let modern web pages render, and so res.body doesn't contain relevent information most of the time. 
-- scss sheets are not compiling.
+- get(url) currently does not let modern web pages render, and so res.body doesn't contain relevent information most of the time. Will try and use package phantomjs.
+
 
 ## MVP
 
