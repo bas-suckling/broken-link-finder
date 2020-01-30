@@ -1,6 +1,5 @@
 import React from 'react'
 import UrlInput from '../url-input/UrlInput'
-import './landingPage.scss'
 
 class LandingPage extends React.Component {
     constructor(props) {
