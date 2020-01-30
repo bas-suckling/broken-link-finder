@@ -7,3 +7,7 @@ table, th, td {
 
 table {
   min-width: 30%; }
+
+th, td {
+  text-align: left;
+  padding: 10px; }
