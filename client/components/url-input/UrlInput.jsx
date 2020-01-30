@@ -22,7 +22,7 @@ class UrlInput extends React.Component {
         e.preventDefault()
         this.setState({baseUrl : this.state.url}) 
         scrapeBaseUrl(this.state.url)
-        .then(res => console.log(res.body))
+        .then(res => console.log(res.text))
     }
 
     render() {

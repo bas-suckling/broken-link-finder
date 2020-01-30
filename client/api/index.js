@@ -6,4 +6,6 @@ function scrapeBaseUrl(url) {
         .then(res => (res))
 }
 
+function scrapeEmbeddedUrls() {}
+
 export default scrapeBaseUrl
