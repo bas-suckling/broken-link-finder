@@ -4,19 +4,25 @@ class Results extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            baseUrl: ''
+            links: []
         }
+        
     }
 
     render() {
         return (
             <>
-            {(this.state.baseUrl ?
+            {(this.props.baseUrl ?
                 (<div>
-                    <h3>Links hosted at {this.state.baseUrl}</h3>
-                    <ul>
-                        <li>Placeholder link</li>
-                    </ul>
+                    <h3>Links hosted at {this.props.baseUrl}</h3>
+                    {(this.state.links.length = 0) ? 
+                        <ul>
+                            <li>Placeholder link</li>
+                        </ul>:
+                        <p>No links found</p>
+                        }
+
+                    
                 </div>)
                 : <h3>No Url Specified</h3>
             )}

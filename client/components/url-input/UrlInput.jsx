@@ -1,12 +1,14 @@
 import React from 'react'
 
 import findAllLinks from '../../api/index.js'
+import Results from '../results/Results.jsx'
 
 class UrlInput extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            url: ''
+            url: '',
+            baseUrl: ''
         }
     }
 
@@ -18,6 +20,7 @@ class UrlInput extends React.Component {
 
     submit = (e) => {
         e.preventDefault()
+        this.setState({baseUrl : this.state.url}) 
         findAllLinks(this.state.url)
         .then(res => console.log(res))
     }
@@ -33,6 +36,8 @@ class UrlInput extends React.Component {
                             Check links
                         </button>
                     </form>
+
+                    <Results baseUrl = {this.state.baseUrl} />
                 </div>
             </>
         )
