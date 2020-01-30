@@ -9,9 +9,24 @@ class LinksList extends React.Component {
     render() {
         return (
             <>
-                <ul>
-                    <li>Placeholder</li>
-                </ul>
+                <div className="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Url address</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.props.links.map(function (status, url, i) {
+                                return  <tr key={i}>
+                                            <td>{url.value}</td>
+                                            <td>{status.value}</td>
+                                        </tr>
+                            })}
+                        </tbody>
+                    </table>
+                </div>
             </>
         )
     }
