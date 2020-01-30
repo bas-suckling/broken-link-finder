@@ -13,17 +13,20 @@ class LinksList extends React.Component {
                     <table>
                         <thead>
                             <tr>
-                                <th>Url address</th>
+                                <th>Url</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {this.props.links.map(function (status, url, i) {
+                        {console.log('this is links', this.props.links)}
+                            {    
+                            this.props.links.map(function (element, i) {
                                 return  <tr key={i}>
-                                            <td>{url.value}</td>
-                                            <td>{status.value}</td>
+                                            <td>{element.url}</td>
+                                            <td>{element.status}</td>
                                         </tr>
-                            })}
+                                }
+                            )}
                         </tbody>
                     </table>
                 </div>

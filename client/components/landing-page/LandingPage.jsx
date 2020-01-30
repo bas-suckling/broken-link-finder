@@ -1,5 +1,6 @@
 import React from 'react'
 import UrlInput from '../url-input/UrlInput'
+import './landingPage.scss'
 
 class LandingPage extends React.Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class LandingPage extends React.Component {
       return (
         <>
           <div>
-            <h1>Welcome to Broken Link Finder</h1>
+            <h1 className="title">Welcome to Broken Link Finder</h1>
             <UrlInput/>
           </div>
 
