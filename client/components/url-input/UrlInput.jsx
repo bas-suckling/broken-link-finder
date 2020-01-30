@@ -1,6 +1,6 @@
 import React from 'react'
 
-import findAllLinks from '../../api/index.js'
+import scrapeBaseUrl from '../../api/index.js'
 import Results from '../results/Results.jsx'
 
 class UrlInput extends React.Component {
@@ -21,8 +21,8 @@ class UrlInput extends React.Component {
     submit = (e) => {
         e.preventDefault()
         this.setState({baseUrl : this.state.url}) 
-        findAllLinks(this.state.url)
-        .then(res => console.log(res))
+        scrapeBaseUrl(this.state.url)
+        .then(res => console.log(res.body))
     }
 
     render() {

@@ -1,9 +1,9 @@
 import request from 'superagent'
 
-function findAllLinks(url) {
+function scrapeBaseUrl(url) {
     return request
         .get('/api/v1/scraper/'+url)
         .then(res => (res))
 }
 
-export default findAllLinks
+export default scrapeBaseUrl

@@ -5,8 +5,7 @@ class Results extends React.Component {
         super(props)
         this.state = {
             links: []
-        }
-        
+        }   
     }
 
     render() {
@@ -21,8 +20,6 @@ class Results extends React.Component {
                         </ul>:
                         <p>No links found</p>
                         }
-
-                    
                 </div>)
                 : <h3>No Url Specified</h3>
             )}
