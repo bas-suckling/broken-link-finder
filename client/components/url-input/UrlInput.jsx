@@ -1,5 +1,4 @@
 import React from 'react'
-
 import scrapeBaseUrl from '../../api/index.js'
 import Results from '../results/Results.jsx'
 
