@@ -14,10 +14,11 @@ const request = require ('superagent')
     
 // })
 
+
 router.get('/:url', (req, res) => {
     let url = req.params.url
-    content = getBaseUrl(url)
-    .then(content => res.send(content))
+    getBaseUrl(url)
+    .then(content => console.log(content))
 } )
 
 function getBaseUrl (url) {(async () => {
