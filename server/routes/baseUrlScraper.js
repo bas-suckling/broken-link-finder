@@ -4,14 +4,14 @@ const router = express.Router()
 // const getBaseUrl = require('./baseUrlPuppeteer')
 
 router.get('/:url', (req, res) => {
-  let url = req.params.url
+  let url = 'https://' + req.params.url
   console.log('url is', url)
   const scrapedPage = new Promise((resolve, reject) => {
     getBaseUrlContent(url)
       .then(data => {
         resolve(data)
       })
-      .catch(err => reject('Medium scrape failed'))
+      .catch(err => reject('Page scrape failed'))
   })
     
   Promise.all(scrapedPage)
@@ -31,6 +31,7 @@ function getBaseUrlContent (url) {(async () => {
   await page.goto(url);
   let content = await(page.content());
   await browser.close();
+  console.log(content)
   return(content)
 })();
 }
