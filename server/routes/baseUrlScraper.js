@@ -1,19 +1,13 @@
 const express = require('express')
 const router = express.Router()
-const {scrapeUrl} = '../../client/helpers.js'
-// const request = require ('superagent')
+// const scrapeUrl = require('../../client/helpers.js')
+// const getBaseUrl = require('./baseUrlPuppeteer')
 
 router.get('/:url', (req, res) => {
-  let url = toString(req.params.url)
+  let url = req.params.url
   console.log('url is', url)
-  const scrapedPage = new Promise((resolve, reject) => {
-    scrapeUrl(url)
-      .then(data => {
-        resolve(data)
-      })
-      .catch(err => reject('Page scrape failed', err))
-  })
-
+  const scrapedPage = getBaseUrlContent(url)
+  
 
   Promise.all(scrapedPage)
     .then(data => {
@@ -25,3 +19,14 @@ router.get('/:url', (req, res) => {
 
 module.exports = router
 
+const puppeteer = require('puppeteer');
+
+function getBaseUrlContent (url) {(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(url);
+  let content = await(page.content());
+  await browser.close();
+  return(content)
+})();
+}

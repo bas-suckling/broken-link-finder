@@ -1,5 +1,3 @@
-// test file to see if I can get puppeteer to render a web page before I get the links.
-
 const puppeteer = require('puppeteer');
 
 function getBaseUrl (url) {(async () => {
@@ -8,11 +6,11 @@ function getBaseUrl (url) {(async () => {
   await page.goto(url);
   let content = await(page.content());
   await browser.close();
-  return content
+  console.log(content)
 })();
 }
 
 
-module.exports = {
-    getBaseUrl
-}
+getBaseUrl('https://www.bas-suckling.com')
+
+module.exports = getBaseUrl
