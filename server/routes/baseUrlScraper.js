@@ -6,16 +6,20 @@ const router = express.Router()
 router.get('/:url', (req, res) => {
   let url = req.params.url
   console.log('url is', url)
-  const scrapedPage = getBaseUrlContent(url)
-  
-
+  const scrapedPage = new Promise((resolve, reject) => {
+    getBaseUrlContent(url)
+      .then(data => {
+        resolve(data)
+      })
+      .catch(err => reject('Medium scrape failed'))
+  })
+    
   Promise.all(scrapedPage)
     .then(data => {
       console.log(data)
     })
     .catch(err => res.status(500).send(err))
 })
-
 
 module.exports = router
 

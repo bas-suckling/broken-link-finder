@@ -6,11 +6,10 @@ function getBaseUrl (url) {(async () => {
   await page.goto(url);
   let content = await(page.content());
   await browser.close();
-  console.log(content)
+  return(content)
 })();
 }
 
 
-getBaseUrl('https://www.bas-suckling.com')
 
 module.exports = getBaseUrl
