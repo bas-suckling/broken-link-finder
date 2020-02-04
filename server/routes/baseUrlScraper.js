@@ -21,14 +21,14 @@ router.get('/:url', (req, res) => {
     );
   await browser.close();
   data = hrefs2
-  const finalLinks = await arrayFunctions.generateObjArray(data, arrayFunctions.testAllLinks(data))
+  const finalLinks = await arrayFunctions.generateObjArray(data, await arrayFunctions.testAllLinks(data))
   console.log(finalLinks)
   res.json(finalLinks)
 })();
 }
 
 getBaseUrlContent(url2)
-setTimeout(function(){ console.log(data); }, 15000);
+setTimeout(function(){ console.log(data); }, 5000);
  
 })
 

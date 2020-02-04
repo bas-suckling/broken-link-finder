@@ -10,31 +10,33 @@ let testArray = [
 
 //takes in an array of links and returns an array with the status of each link
 const testAllLinks = (array) => {
-    console.log(array)
-    let statusArray = array.map((link) => {
-            return testLinkStatus(link)
-        })
-    return statusArray
+    let linksArray = (array.map((link) => {
+        testLinkStatus(link)
+    }))
+    return linksArray
 }
 
 //takes a url and returns the status
 const testLinkStatus = (link) => {
-    return linkRequest
+    let status = linkRequest
         .get(link)
         .then(res => (res.status))
         .catch(err => (err.status))
+    // console.log(status)
+    return status
 }
 
 //joins the link array and status array
-function generateObjArray (linksArray, statusArray ) {
+const generateObjArray = (linksArray, statusArray) => {
     let array = []
-    linksArray.forEach((key, i) => array.push({link: linksArray[i], status: statusArray[i]}))
-    console.log(array)
+    linksArray.forEach((i) => array.push({
+        link: linksArray[i],
+        status: statusArray[i]
+    }))
     return array
 }
-
-testAllLinks(testArray)
-// generateObjArray(testArray,testAllLinks(testArray))
+// console.log('individual item test: ', testLinkStatus(testArray[0]))
+// console.log('full array test: ', testAllLinks( testArray))
 
 module.exports = {
     testAllLinks,
