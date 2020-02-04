@@ -1,16 +1,35 @@
 const express = require('express')
 const router = express.Router()
+const puppeteer = require('puppeteer');
 
-const request = require ('superagent')
 
-router.get('/:url', (req,res) => {
-    let url = req.params.url
-    console.log("url is", url )
-    request
-    .get(url)
-    .then(x => res.send(x))
-    .catch(err => res.send(err.status))
+router.get('/:url', (req, res) => {
+  let data
+  let url2 = "https://" + req.params.url
+  function getBaseUrlContent (url) {(async () => {
+  const browser = await puppeteer.launch();
+  const page = await browser.newPage();
+  await page.goto(url);
+  const elementHandles = await page.$$('a');
+    const propertyJsHandles = await Promise.all(
+      elementHandles.map(handle => handle.getProperty('href'))
+    );
+  
+    const hrefs2 = await Promise.all(
+      propertyJsHandles.map(handle => handle.jsonValue())
+    );
+  await browser.close();
+  data = hrefs2
+  res.json(data)
+})();
+}
+
+getBaseUrlContent(url2)
+setTimeout(function(){ console.log(data); }, 15000);
+ 
 })
 
 module.exports = router
+
+
 

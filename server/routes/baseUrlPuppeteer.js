@@ -1,11 +1,15 @@
 const puppeteer = require('puppeteer');
 
-(async () => {
+function getBaseUrl (url) {(async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.goto('http://www.bas-suckling.com');
+  await page.goto(url);
   let content = await(page.content());
   await browser.close();
-  console.log(content)
+  return(content)
 })();
+}
 
+
+
+module.exports = getBaseUrl
