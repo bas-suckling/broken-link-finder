@@ -17,10 +17,14 @@ const testAllLinks = (array) => {
     return statusArray
 }
 
-testLinkStatus = (link) => {
+const testLinkStatus = (link) => {
     return linkRequest
         .get(link)
         .then(res => (res.status))
         .catch(err => (err.status))
 }
 
+module.exports = {
+    testAllLinks,
+    testLinkStatus
+}
