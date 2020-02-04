@@ -1,8 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const puppeteer = require('puppeteer');
-// const scrapeUrl = require('../../client/helpers.js')
-// const getBaseUrl = require('./baseUrlPuppeteer')
+
 
 router.get('/:url', (req, res) => {
   let data
@@ -29,12 +28,6 @@ getBaseUrlContent(url2)
 setTimeout(function(){ console.log(data); }, 15000);
  
 })
-
-const seperateLinks = (data) => {
-  let links = document.querySelectorAll("a")
-  console.log(links)
-}
-
 
 module.exports = router
 
