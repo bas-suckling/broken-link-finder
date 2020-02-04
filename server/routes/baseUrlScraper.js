@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const puppeteer = require('puppeteer');
+const arrayFunctions = require('./linkTest')
 
 
 router.get('/:url', (req, res) => {
@@ -20,7 +21,8 @@ router.get('/:url', (req, res) => {
     );
   await browser.close();
   data = hrefs2
-  res.json(data)
+  const finalLinks = await arrayFunctions.generateObjArray(data, arrayFunctions.testAllLinks(data))
+  res.json(finalLinks)
 })();
 }
 
