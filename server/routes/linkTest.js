@@ -1,9 +1,23 @@
-const express = require('express')
-const router = express.Router()
-// const scrapeUrl = require('../../client/helpers.js')
-// const getBaseUrl = require('./baseUrlPuppeteer')
+const linkRequest = require('superagent')
 
-router.get('/:url', (req, res) => {
-  let url = 'https://' + req.params.url
-  res.sendStatus(url)
-})
+//array will have the format [{link:'www.someurl.com', status:''}]
+
+function testAllLinks(array) {
+    array.map(function (link, i) {
+            return
+        }
+
+
+    )
+
+}
+
+function testLink(link) {
+    return linkRequest
+        .get(link)
+        .then(res => (res.status))
+        .catch(err => (err.status))
+}
+
+console.log(testLink('https://www.bas-suckling.com/'))
+
