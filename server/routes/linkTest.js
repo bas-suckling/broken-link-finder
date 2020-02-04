@@ -29,7 +29,7 @@ const testLinkStatus = (link) => {
 //joins the link array and status array
 function generateObjArray (linksArray, statusArray ) {
     let array = []
-    linksArray.forEach((key, i) => array.push({'link': linksArray[i], 'status' : statusArray[i]}))
+    linksArray.forEach((key, i) => array.push({link: linksArray[i], status: statusArray[i]}))
     console.log(array)
     return array
 }
