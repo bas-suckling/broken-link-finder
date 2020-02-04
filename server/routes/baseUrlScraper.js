@@ -11,17 +11,29 @@ router.get('/:url', (req, res) => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   await page.goto(url);
-  let content = await(page.content())
+  const elementHandles = await page.$$('a');
+    const propertyJsHandles = await Promise.all(
+      elementHandles.map(handle => handle.getProperty('href'))
+    );
+  
+    const hrefs2 = await Promise.all(
+      propertyJsHandles.map(handle => handle.jsonValue())
+    );
   await browser.close();
-  data = content
-  // seperateLinks(data)
+  data = hrefs2
+  res.json(data)
 })();
 }
 
 getBaseUrlContent(url2)
-// setTimeout(function(){ console.log(data); }, 5000);
+setTimeout(function(){ console.log(data); }, 15000);
  
 })
+
+const seperateLinks = (data) => {
+  let links = document.querySelectorAll("a")
+  console.log(links)
+}
 
 
 module.exports = router
