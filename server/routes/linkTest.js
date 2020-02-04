@@ -11,16 +11,9 @@ let testArray = [
 //takes in an array of links and returns an array with the status of each link
 const testAllLinks = (array) => {
     console.log(array)
-    // let statusArray = array.map((link) => {
-    //         return testLinkStatus(link)
-    //     })
-
-    let statusArray = []
-    array.forEach(link => {
-        statusArray.push(testLinkStatus(link))
-    })
-        // setTimeout(function(){ console.log(statusArray); }, 5000);
-    console.log( statusArray)
+    let statusArray = array.map((link) => {
+            return testLinkStatus(link)
+        })
     return statusArray
 }
 
