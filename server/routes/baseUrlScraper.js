@@ -22,6 +22,7 @@ router.get('/:url', (req, res) => {
   await browser.close();
   data = hrefs2
   const finalLinks = await arrayFunctions.generateObjArray(data, arrayFunctions.testAllLinks(data))
+  console.log(finalLinks)
   res.json(finalLinks)
 })();
 }
