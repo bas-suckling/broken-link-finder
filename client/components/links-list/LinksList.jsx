@@ -10,24 +10,17 @@ class LinksList extends React.Component {
         return (
             <>
                 <div >
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th>Url</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {    
-                            this.props.links.map(function (element, i) {
-                                return  <tr key={i}>
-                                            <td>{element.url}</td>
-                                            <td>{element.status}</td>
-                                        </tr>
-                                }
-                            )}
-                        </tbody>
-                    </table>
+            
+                    {    
+                    this.props.links.map(function (element, i) {
+                        console.log(element)
+                        return  <ul key={i}>
+                                    <li>{element.link}</li>
+                                    <li>{element.status}</li>
+                                </ul>
+                                
+                        }
+                    )}
                 </div>
             </>
         )

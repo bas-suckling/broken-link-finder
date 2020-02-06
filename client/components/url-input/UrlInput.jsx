@@ -7,7 +7,8 @@ class UrlInput extends React.Component {
         super(props)
         this.state = {
             url: '',
-            baseUrl: ''
+            baseUrl: '',
+            links: []
         }
     }
 
@@ -21,7 +22,7 @@ class UrlInput extends React.Component {
         e.preventDefault()
         this.setState({baseUrl : this.state.url}) 
         scrapeBaseUrl(this.state.url)
-        .then(res => console.log(res.text))
+        .then(res => this.setState({links:res}))
     }
 
     render() {
@@ -36,7 +37,7 @@ class UrlInput extends React.Component {
                         </button>
                     </form>
 
-                    <Results baseUrl = {this.state.baseUrl} />
+                    <Results baseUrl = {this.state.baseUrl} links = {this.state.links}/>
                 </div>
             </>
         )

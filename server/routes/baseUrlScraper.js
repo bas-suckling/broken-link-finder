@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const puppeteer = require('puppeteer');
 const linkRequest = require('superagent')
-const arrayFunctions = require('./linkTest')
+// const arrayFunctions = require('./linkTest')
 
 
 router.get('/:url', (req, res) => {
