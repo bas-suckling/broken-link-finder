@@ -13,7 +13,7 @@ const testAllLinks = (array) => {
     let statusArray = array.map((link) => {
             return testLinkStatus(link)
         })
-        // setTimeout(function(){ console.log(statusArray); }, 5000);
+        setTimeout(function(){ console.log(statusArray); }, 5000);
     return statusArray
 }
 
@@ -23,6 +23,7 @@ const testLinkStatus = (link) => {
         .then(res => (res.status))
         .catch(err => (err.status))
 }
+
 
 module.exports = {
     testAllLinks,
