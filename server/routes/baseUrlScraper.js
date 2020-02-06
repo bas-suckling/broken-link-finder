@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const puppeteer = require('puppeteer');
 const linkRequest = require('superagent')
-// const arrayFunctions = require('./linkTest')
+const arrayFunctions = require('./linkTest')
 
 
 router.get('/:url', (req, res) => {
@@ -22,11 +22,11 @@ router.get('/:url', (req, res) => {
       );
     await browser.close();
     data = hrefs2
-   let stats = await Promise.all(testAllLinks(data))
+   let stats = await Promise.all(arrayFunctions.testAllLinks(data))
    .then(res => {
     return res
    })
-   let finalObj = generateObjArray(data, stats)
+   let finalObj = arrayFunctions.generateObjArray(data, stats)
    console.log(finalObj)
   //  res.send(stats)
    res.json(finalObj)
@@ -43,30 +43,7 @@ getBaseUrlContent(url2)
  
 })
 
-const testAllLinks = (array) => {
-  // console.log(array)
-  let statusArray = array.map((link) => {
-          return testLinkStatus(link)
-      })
-      // setTimeout(function(){ console.log(statusArray); }, 5000);
-  return statusArray
-}
 
-const testLinkStatus = (link) => {
-  return linkRequest
-      .get(link)
-      .then(res => (res.status))
-      .catch(err => (err.status))
-}
-
-const generateObjArray = (linksArray, statusArray) => {
-  let array = []
-  linksArray.forEach((element, i) => array.push({
-      link: linksArray[i],
-      status: statusArray[i]
-  }))
-  return array
-}
 
 module.exports = router
 
