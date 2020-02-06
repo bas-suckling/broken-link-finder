@@ -23,9 +23,13 @@ router.get('/:url', (req, res) => {
     await browser.close();
     data = hrefs2
    let stats = await Promise.all(testAllLinks(data))
-   .then(res => console.log(res))
+   .then(res => {
+    return res
+   })
+   let finalObj = generateObjArray(data, stats)
+   console.log(finalObj)
   //  res.send(stats)
-   res.send(data)
+   res.json(finalObj)
     
     
   })();
@@ -40,11 +44,11 @@ getBaseUrlContent(url2)
 })
 
 const testAllLinks = (array) => {
-  console.log(array)
+  // console.log(array)
   let statusArray = array.map((link) => {
           return testLinkStatus(link)
       })
-      setTimeout(function(){ console.log(statusArray); }, 5000);
+      // setTimeout(function(){ console.log(statusArray); }, 5000);
   return statusArray
 }
 
@@ -53,6 +57,15 @@ const testLinkStatus = (link) => {
       .get(link)
       .then(res => (res.status))
       .catch(err => (err.status))
+}
+
+const generateObjArray = (linksArray, statusArray) => {
+  let array = []
+  linksArray.forEach((element, i) => array.push({
+      link: linksArray[i],
+      status: statusArray[i]
+  }))
+  return array
 }
 
 module.exports = router
