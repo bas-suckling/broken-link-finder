@@ -1,8 +1,9 @@
 import React from 'react'
+import LandingPage from './landing-page/LandingPage'
 
 const App = () => {
   return (
-    <h1>React development has begun!</h1>
+    <LandingPage/>
   )
 }
 

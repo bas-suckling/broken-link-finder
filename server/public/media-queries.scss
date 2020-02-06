@@ -1,0 +1,41 @@
+//Media Queries
+
+@mixin mobile {
+    @media(min-width: 480px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media(min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media(min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin desktop-large {
+    @media(min-width: 1280px) {
+        @content;
+    }
+}
+
+@mixin desktop-xlarge {
+    @media(min-width: 1600px) {
+        @content;
+    }
+}
+
+// USAGE
+// -----------------
+
+// h1 {
+//     font-size: 2rem;
+//         @include tablet {
+//             font-size:3rem
+//         }
+// }
