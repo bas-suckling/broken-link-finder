@@ -1,9 +1,6 @@
 const linkRequest = require('superagent')
 const puppeteer = require('puppeteer');
 
-
-
-
 function scrapeLinks(url) {
   return puppeteer.launch()
   .then(browser => {
