@@ -21,7 +21,7 @@ class LinksList extends React.Component {
                             {    
                             this.props.links.map(function (element, i) {
                                 return  <tr key={i}>
-                                            <td>{element.link}</td>
+                                            <td><a href={element.link}>{element.link}</a></td>
                                             <td>{element.status}</td>
                                         </tr>
                                 }

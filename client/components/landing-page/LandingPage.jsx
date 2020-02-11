@@ -8,7 +8,7 @@ class LandingPage extends React.Component {
     render() {
       return (
         <>
-          <div>
+          <div className='content'>
             <h1 className="title">Welcome to Broken Link Finder</h1>
             <UrlInput/>
           </div>
