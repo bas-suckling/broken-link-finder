@@ -1,13 +1,24 @@
 body {
-  background-color: lightgray;
-  padding: 1%; }
+  background-image: linear-gradient(-90deg, lightskyblue, salmon);
+  padding: 1%;
+  font-family: 'Noto Sans', sans-serif; }
 
 table, th, td {
   border: 1px solid black; }
 
 table {
-  min-width: 30%; }
+  min-width: 30%;
+  margin: 0 auto; }
 
 th, td {
   text-align: left;
   padding: 10px; }
+
+.content {
+  text-align: center; }
+
+.greenStatus {
+  color: green; }
+
+.redStatus {
+  color: red !important; }
