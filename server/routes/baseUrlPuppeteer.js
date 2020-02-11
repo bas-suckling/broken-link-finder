@@ -1,3 +1,5 @@
+// this is a test implementation of basic puppeteer functionality
+
 const puppeteer = require('puppeteer');
 
 function getBaseUrl (url) {(async () => {
@@ -10,17 +12,4 @@ function getBaseUrl (url) {(async () => {
 })();
 }
 
-// function getLinks (url) {(async () => {
-//   const browser = await puppeteer.launch();
-//   const page = await browser.newPage();
-//   await page.goto(url);
-//   let content = await(page.content());
-//   let 
-//   await browser.close();
-//   console.log(content)
-// })();
-// }
-
-// getLinks('https://www.bas-suckling.com')
-
-module.exports = getBaseUrl
+getBaseUrl('www.google.com')
