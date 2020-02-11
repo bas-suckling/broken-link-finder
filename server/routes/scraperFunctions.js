@@ -2,7 +2,7 @@ const linkRequest = require('superagent')
 const puppeteer = require('puppeteer');
 
 function scrapeLinks(url) {
-  return puppeteer.launch()
+  return puppeteer.launch({headless:false})
   .then(browser => {
     return browser.newPage()
     .then(page => {
