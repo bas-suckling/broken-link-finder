@@ -6,10 +6,6 @@ class LinksList extends React.Component {
         //props is an array of objects with the format [{url: "www.example.com", status:"pending"}, {url: "www.example2.com", status:"pending"}]
     }
 
-
-
-
-
     render() {
         return (
             <>
