@@ -32,7 +32,7 @@ class UrlInput extends React.Component {
         return (
             <>
                 <div>
-                    <h3>Enter a url into the box below to find all broken links</h3>
+                    <h3>Enter a url into the box below to find all broken links on that page</h3>
                     <form>
                         <input className='' required type='text' name='url' placeholder='eg. www.askjeeves.com' onChange={this.updateUrl}></input>
                         <button className="" onClick={this.submit}>

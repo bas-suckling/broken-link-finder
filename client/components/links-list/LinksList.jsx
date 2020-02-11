@@ -10,40 +10,42 @@ class LinksList extends React.Component {
 
 
 
-render() {
-    return (
-        <>
-            <div > {this.props.links.length > 0 ?
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th>Url</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            
-                            this.props.links.map(function (element, i) {
-                                const linkColour = (status) => {
-                                    if (status != 200) {
-                                        return 'redStatus'
-                                    } 
-                                }
-                                return <tr key={i}>
-                                    <td><a href={element.link}>{element.link}</a></td>
-                                    <td className={`greenStatus ${linkColour(element.status)}`}>{element.status}</td>
+    render() {
+        return (
+            <>
+                <div > {this.props.links.length > 0 ?
+                    <div>
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>Url</th>
+                                    <th>Status</th>
                                 </tr>
-                            }
-                            )}
-                    </tbody>
-                </table> :
-                <div className="spinner-border" role="status">
-                    <span className="sr-only">Loading...</span>
-                </div>}
-            </div>
-        </>
-    )
-}
+                            </thead>
+                            <tbody>
+                                {
+
+                                    this.props.links.map(function (element, i) {
+                                        const linkColour = (status) => {
+                                            if (status != 200) {
+                                                return 'redStatus'
+                                            }
+                                        }
+                                        return <tr key={i}>
+                                            <td><a href={element.link}>{element.link}</a></td>
+                                            <td className={`greenStatus ${linkColour(element.status)}`}>{element.status}</td>
+                                        </tr>
+                                    }
+                                    )}
+                            </tbody>
+                        </table>
+                    </div> :
+                    <div className="spinner-border" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </div>}
+                </div>
+            </>
+        )
+    }
 }
 export default LinksList
