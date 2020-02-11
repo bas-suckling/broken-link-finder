@@ -20,7 +20,7 @@ class UrlInput extends React.Component {
 
     submit = (e) => {
         e.preventDefault()
-        this.setState({baseUrl : this.state.url}) 
+        this.setState({baseUrl : this.state.url, links:[]}) 
         scrapeBaseUrl(this.state.url)
         .then(res => this.setState({links:res}))
     }

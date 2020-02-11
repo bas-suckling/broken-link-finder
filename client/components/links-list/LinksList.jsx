@@ -9,7 +9,7 @@ class LinksList extends React.Component {
     render() {
         return (
             <>
-                <div >
+                <div > {this.props.links.length > 0 ? 
                     <table className="table">
                         <thead>
                             <tr>
@@ -23,11 +23,14 @@ class LinksList extends React.Component {
                                 return  <tr key={i}>
                                             <td><a href={element.link}>{element.link}</a></td>
                                             <td>{element.status}</td>
-                                        </tr>
+                                        </tr> 
                                 }
                             )}
                         </tbody>
-                    </table>
+                    </table> :
+                    <div className="spinner-border" role="status">
+                    <span className="sr-only">Loading...</span>
+                  </div>}
                 </div>
             </>
         )
