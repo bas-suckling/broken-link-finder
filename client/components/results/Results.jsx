@@ -17,7 +17,7 @@ class Results extends React.Component {
                             <p>No links found</p>
                         }
                     </div>)
-                    : <h3>No Url Specified</h3>
+                    : <h3></h3>
                 )}
             </>
         )

@@ -8,7 +8,8 @@ class UrlInput extends React.Component {
         this.state = {
             url: '',
             baseUrl: '',
-            links: []
+            links: [],
+            err: false
         }
     }
 
@@ -20,9 +21,11 @@ class UrlInput extends React.Component {
 
     submit = (e) => {
         e.preventDefault()
-        this.setState({baseUrl : this.state.url, links:[]}) 
+        this.setState({baseUrl : this.state.url, links:[], err:''}) 
         scrapeBaseUrl(this.state.url)
         .then(res => this.setState({links:res}))
+        .catch(err => this.setState({err:true}))
+
     }
 
     render() {
@@ -36,8 +39,10 @@ class UrlInput extends React.Component {
                             Check links
                         </button>
                     </form>
-
-                    <Results baseUrl = {this.state.baseUrl} links = {this.state.links}/>
+                    {this.state.err == false ? 
+                    <Results baseUrl = {this.state.baseUrl} links = {this.state.links}/> :
+                    <h4>Invalid URL: {this.state.baseUrl}</h4>
+                }
                 </div>
             </>
         )
