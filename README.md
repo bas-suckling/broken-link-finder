@@ -1,16 +1,12 @@
 # Broken Link Finder
 
-This web app allows a user to type in a url, and gets displayed a list of all the external links on that page, and whether they are broken or not.
-
-## Current Tasks
-
-- get(url) currently does not let modern web pages render, and so res.body doesn't contain relevent information most of the time. Node package puppeteer.js seems to do the trick.
-
-
-## MVP
-
-- Allow users to type a url into the portal
-- If the link is valid, return a list of links and their status.
+This web app allows a user to type in a url, and displays a list of all the links on that page, and their status codes (eg 404, 200 etc). It was built using React, Node.js, express and Puppeteer. Check it out here: http://broken-link-finder.herokuapp.com/
 
 ## Stretch
 - Give users an option to do a 'deep' search, and look at all routes associated with the entered url (e.g '/about', '/contact-us' etc)
+
+## Troubleshooting
+I had issues during deployment to heroku, as it requries additional buildpack which is not included. See the links beloew for details.
+
+https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md
+https://github.com/jontewks/puppeteer-heroku-buildpack
