@@ -8,5 +8,5 @@ This web app allows a user to type in a url, and displays a list of all the link
 ## Troubleshooting
 I had issues during deployment to heroku, as it requries additional buildpack which is not included. See the links beloew for details.
 
-https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md
-https://github.com/jontewks/puppeteer-heroku-buildpack
+- https://github.com/puppeteer/puppeteer/blob/master/docs/troubleshooting.md
+- https://github.com/jontewks/puppeteer-heroku-buildpack
