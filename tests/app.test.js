@@ -1,11 +1,11 @@
 import React from 'react'
-import { mount } from 'enzyme'
+import { shallow } from 'enzyme'
 
 import App from '../client/components/App'
 
 test('<App />', () => {
-  const expected = 'Broken Link Finder'
-  const wrapper = mount(<App />)
-  expect(wrapper.text()).toContain(expected)
+  //renders 1 LandingPage component
+  const wrapper = shallow(<App />)
+  expect(wrapper.text()).toContain("<LandingPage />")
 })
 
