@@ -27,7 +27,8 @@ tr:hover {
   color: green; }
 
 .redStatus {
-  color: red !important; }
+  color: black !important;
+  background-color: red; }
 
 .button {
   background-color: #313131;

@@ -28,7 +28,7 @@ class LinksList extends React.Component {
                                             }
                                         }
                                         return <tr key={i}>
-                                            <td><a href={element.link}>{element.link}</a></td>
+                                            <td className={`${linkColour(element.status)}`}><a href={element.link}>{element.link}</a></td>
                                             <td className={`greenStatus ${linkColour(element.status)}`}>{element.status}</td>
                                         </tr>
                                     }
