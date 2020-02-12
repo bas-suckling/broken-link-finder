@@ -26,6 +26,7 @@ class LinksList extends React.Component {
                                             if (status != 200) {
                                                 return 'redStatus'
                                             }
+                                            return
                                         }
                                         return <tr key={i}>
                                             <td className={`${linkColour(element.status)}`}><a href={element.link}>{element.link}</a></td>
