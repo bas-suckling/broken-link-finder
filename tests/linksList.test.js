@@ -19,5 +19,5 @@ test('Renders the table with the right links', () => {
 	],})
 
 	const wrapper = shallow(<LinksList {... defaultProps}/>)
-	expect(wrapper.text()).toContain('www.example.com')
+	expect(wrapper.text()).toContain('www.example.com', 'www.example2.com')
 })
