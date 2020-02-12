@@ -7,8 +7,6 @@ const defaultProps = ({links :[
 	{link: "www.example2.com", status:404}
 ]})
 
-
-
 test('Renders the table with status codes', () => {
 	const wrapper = shallow(<LinksList {... defaultProps}/>)
 	expect(wrapper.text()).toContain(200, 404)
