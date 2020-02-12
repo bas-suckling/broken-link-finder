@@ -1,18 +1,24 @@
 body {
   background-image: linear-gradient(-90deg, lightskyblue, salmon);
   padding: 1%;
-  font-family: 'Noto Sans', sans-serif; }
+  font-family: 'Noto Sans', sans-serif;
+  color: #313131; }
 
 table, th, td {
-  border: 1px solid black; }
+  border: 1px solid black;
+  border-radius: 5px; }
 
 table {
   min-width: 30%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  color: #313131; }
 
 th, td {
   text-align: left;
   padding: 10px; }
+
+tr:hover {
+  background-image: linear-gradient(-90deg, #d9979a, #a9b8d3); }
 
 .content {
   text-align: center; }
@@ -22,3 +28,14 @@ th, td {
 
 .redStatus {
   color: red !important; }
+
+.button {
+  background-color: #313131;
+  /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 3px 10px;
+  margin-left: 10px;
+  text-align: center;
+  text-decoration: none; }

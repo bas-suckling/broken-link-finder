@@ -35,7 +35,7 @@ class UrlInput extends React.Component {
                     <h3>Enter a url into the box below to find all broken links on that page</h3>
                     <form>
                         <input className='' required type='text' name='url' placeholder='eg. www.google.com' onChange={this.updateUrl}></input>
-                        <button className="" onClick={this.submit}>
+                        <button className="button" onClick={this.submit}>
                             Check links
                         </button>
                     </form>
