@@ -35,6 +35,7 @@ class LinksList extends React.Component {
                                     )}
                             </tbody>
                         </table>
+                        <p><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of Status Codes</a></p>
                     </div> :
                     <div className="spinner-border" role="status">
                         <span className="sr-only">Loading...</span>
