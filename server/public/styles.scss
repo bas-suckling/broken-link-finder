@@ -2,21 +2,40 @@ body {
     background-image: linear-gradient(-90deg, lightskyblue , salmon);
     padding: 1%;
     font-family: 'Noto Sans', sans-serif;
+    color: rgb(49, 49, 49);
 }
 
 table, th, td {
     border: 1px solid black;
+    border-radius: 5px;
+
   }
 
 table {
     min-width: 30%;
     margin: 0 auto;
-
+    color: rgb(49, 49, 49);
 }
 
 th, td {
     text-align: left;
     padding: 10px;
+}
+
+
+
+// th {
+//     background-color: white
+// }
+
+// tr {
+//     background-color: lightgrey;
+// }
+
+
+
+tr:hover {
+    background-image: linear-gradient(-90deg, rgb(217,151,154) ,  rgb(169,184,211));
 }
 
 .content {
@@ -30,3 +49,14 @@ th, td {
 .redStatus {
     color: red !important;
 }
+
+.button {
+    background-color: rgb(49, 49, 49); /* Green */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 3px 10px;
+    margin-left:10px;
+    text-align: center;
+    text-decoration: none;
+  }

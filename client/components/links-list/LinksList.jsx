@@ -6,12 +6,12 @@ class LinksList extends React.Component {
         //props is an array of objects with the format [{url: "www.example.com", status:"pending"}, {url: "www.example2.com", status:"pending"}]
     }
 
-    render() {
+    render() { 
         return (
             <>
                 <div > {this.props.links.length > 0 ?
                     <div>
-                        <table className="table">
+                        <table className="table animated fadeIn">
                             <thead>
                                 <tr>
                                     <th>Url</th>
@@ -35,6 +35,7 @@ class LinksList extends React.Component {
                                     )}
                             </tbody>
                         </table>
+                        <p><a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of Status Codes</a></p>
                     </div> :
                     <div className="spinner-border" role="status">
                         <span className="sr-only">Loading...</span>
