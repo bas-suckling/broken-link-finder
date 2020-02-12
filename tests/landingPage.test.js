@@ -1,11 +1,11 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import App from '../client/components/App'
+import LandingPage from '../client/components/landing-page/LandingPage'
 
-test('<App />', () => {
+test('<LandingPage />', () => {
   const expected = 'Broken Link Finder'
-  const wrapper = mount(<App />)
+  const wrapper = mount(<LandingPage />)
   expect(wrapper.text()).toContain(expected)
 })
 
