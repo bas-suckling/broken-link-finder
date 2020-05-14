@@ -1,7 +1,7 @@
 {
   "name": "broken-link-finder",
   "version": "0.2.2",
-  "description": "A webpack React starter",
+  "description": "",
   "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
   "main": "server/index.js",
   "author": "Bas Suckling",
